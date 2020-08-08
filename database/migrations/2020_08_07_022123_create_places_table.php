@@ -20,10 +20,12 @@ class CreatePlacesTable extends Migration
             $table->text('contente');
             $table->string('phone_number',255)->nullable();
             $table->string('city',255);
-            $table->string('time',255);
+            $table->string('time_up')->nullable();
+            $table->string('time_down')->nullable();
+            $table->string('days')->nullable();
             $table->string('image');
-            $table->text('map_lat');
-            $table->text('map_lng');
+            $table->text('map_lat')->nullable();
+            $table->text('map_lng')->nullable();
             $table->timestamps();
         });
     }

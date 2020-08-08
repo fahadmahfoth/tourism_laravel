@@ -17,6 +17,7 @@ class CreatePlaceCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name',255);
             $table->string('image');
+            $table->string('icon');
             $table->timestamps();
         });
     }

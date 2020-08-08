@@ -17,10 +17,10 @@ class UsersAdminController extends Controller
 
 
 
-    public function __construct()
-{
-    $this->middleware(['role:super-admin']);
-}
+//     public function __construct()
+// {
+//     $this->middleware(['role:super-admin']);
+// }
 
 
 
@@ -39,11 +39,10 @@ class UsersAdminController extends Controller
         
         
         
-        return view('admin.users.index', ['users' => $model->paginate(15),
-
-        'permission' =>  $permission, 'role' => $role
-        
-        
+        return view('admin.users.index', [
+        'users'        =>  $model->paginate(15),
+        'permission'   =>  $permission,
+        'role'         =>  $role
         ]);
        
         

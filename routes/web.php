@@ -22,6 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/users', 'Admin\UsersAdminController'); 
+Route::resource('/places', 'Admin\PlaceAdminController'); 
+Route::resource('/categoreis', 'Admin\PlaceCategoryAdminController'); 
 
 Auth::routes();
 
