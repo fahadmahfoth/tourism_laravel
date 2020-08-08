@@ -7,17 +7,36 @@
             <div class="card">
                 <div dir="rtl" style="text-align: right" class="card-header">تعديل نوع</div>
 
-                
+                  {{--  for display the masseege error --}}
+
+                {{-- @if(count($errors)>0)
+
+                <ul class="navbar-nav mr-auto">
+
+                @foreach( $errors->all() as $error )
+                    <li class="nav-item active">
+                    <h5>{{ $error }}</h5> 
+                    </li>
+                    
+                    @endforeach
+
+                </ul>
+                <br>
+                @endif --}}
+
+
+
+
 
                 <div dir="rtl" style="text-align: right" class="card-body">
 
-                    <form action="/categoreis" method="post">
+                    <form action="/update/category/{{$category->id}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
                         <div class="form-group">
                             <label>الاسم</label>
-                            <input class="form-control" name="name">
+                            <input class="form-control" name="name" value="{{$category->name}}">
                         </div>
 
                         <div class="form-group">

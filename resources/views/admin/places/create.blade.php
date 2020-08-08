@@ -7,11 +7,27 @@
             <div class="card">
                 <div dir="rtl" style="text-align: right" class="card-header">اضافة مكان</div>
 
-                
+                   {{--  for display the masseege error --}}
+
+                {{-- @if(count($errors)>0)
+
+                <ul class="navbar-nav mr-auto">
+
+                @foreach( $errors->all() as $error )
+                    <li class="nav-item active">
+                    <h5>{{ $error }}</h5> 
+                    </li>
+                    
+                    @endforeach
+
+                </ul>
+                <br>
+                @endif --}}
+
 
                 <div dir="rtl" style="text-align: right" class="card-body">
 
-                    <form action="/places" method="post">
+                    <form action="/store/place" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('POST')
 

@@ -31,6 +31,10 @@ class PlaceCategoryAdminController extends Controller
         return view('admin.categoreis.create');
     }
 
+
+
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +43,44 @@ class PlaceCategoryAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request,[
+
+            
+            'name' => 'required|max:255',
+            'image' => "required|image",
+            'icon' => "required|image",
+        ],[
+            'name.required'=>             'الاسم مطلوب' ,
+            'name.max'=>                  'الاسم تجاوز الحد الاقصى للاحرف 255' ,
+           
+            'image.required'=>            ' الصورة النوع مطلوبة' ,
+            'image.image'=>               ' صورة النوع يجب ان تكون ملف صورة' ,
+
+            'icon.required'=>            ' ايقونة النوع مطلوبة' ,
+            'icon.image'=>               ' ايقونة النوع يجب ان تكون ملف صورة' ,
+
+            ]);
+
+
+
+
+            $image = $request->image;
+            $image_new_name = time().$image->getClientOriginalName();
+            $image->move('uploads/category/image',$image_new_name);
+           
+            $icon = $request->icon;
+            $icon_new_name = time().$icon->getClientOriginalName();
+            $icon->move('uploads/category/icon',$icon_new_name);
+            
+            $placeCategory=placeCategory::create([
+               'name'          =>$request->name,
+               'image'         =>'uploads/category/image/'.$image_new_name ,
+               'icon'         =>'uploads/category/icon/'.$icon_new_name
+               ]);
+
+
+            return redirect()->back();
     }
 
     /**
@@ -64,8 +105,13 @@ class PlaceCategoryAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.categoreis.edit')->with(
+            'category', placeCategory::with('places')->find($id)   
+
+        );
+        
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -76,7 +122,55 @@ class PlaceCategoryAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+$placeCategory=placeCategory::find($id);
+
+     
+
+$this->validate($request,[
+
+
+    'name' => 'required|max:255',
+    'image' => "nullable|image",
+    'icon' => "nullable|image"
+],[
+    
+
+    'name.required'=>             'الاسم مطلوب' ,
+    'name.max'=>                  'الاسم تجاوز الحد الاقصى للاحرف 255' ,
+   
+    'image.image'=>               ' صورة النوع يجب ان تكون ملف صورة' ,
+
+    'icon.image'=>               ' ايقونة النوع يجب ان تكون ملف صورة' ,
+
+
+    ]);
+
+
+    if ($request->hasFile('image') ) {
+        $image = $request->image;
+        $image_new_name = time().$image->getClientOriginalName();
+        $image->move('uploads/category/image',$image_new_name);
+       
+    
+    $placeCategory->image = 'uploads/category/image/'.$image_new_name;
+    }
+
+
+    if ($request->hasFile('icon') ) {
+        $icon = $request->icon;
+        $icon_new_name = time().$icon->getClientOriginalName();
+        $icon->move('uploads/category/icon',$icon_new_name);
+       
+    
+    $placeCategory->icon = 'uploads/category/icon/'.$icon_new_name;
+    }
+
+    $placeCategory->name = $request->name;
+    $placeCategory->save();
+    return redirect()->back();
+    //->route('category.index');
+
     }
 
     /**
@@ -87,6 +181,9 @@ class PlaceCategoryAdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $placeCategory=placeCategory::find($id);
+        $placeCategory->delete($id);
+        return redirect()->back();
     }
 }

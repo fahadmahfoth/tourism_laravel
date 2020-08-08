@@ -21,12 +21,15 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                            {{ $category->image }}
+
+                                        <img src="{{$category->image}}" alt="{{$category->name}}" class="img-thumbnail" height="50px" width="50px">
+                                            {{-- {{ $category->image }} --}}
     
                                         </td>
     
                                         <td>
-                                            {{ $category->image }}
+                                            <img src="{{$category->icon}}" alt="{{$category->name}}" class="img-thumbnail" height="50px" width="50px">
+                                            {{-- {{ $category->image }} --}}
     
                                         </td>
                                     

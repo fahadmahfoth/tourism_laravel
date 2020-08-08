@@ -8,7 +8,7 @@
                    <div class="row-sm">
                     <h1 dir="rtl">{{$place->name}}</h1>
                    <a href="/places/{{$place->id}}/edit" class="btn btn-primary">تعديل</a>
-                   <a href="/places/{{$place->id}}/edit" class="btn btn-danger">حذف</a>
+                   <a href="/places/{{$place->id}}/destroy" class="btn btn-danger">حذف</a>
                    </div>
                     
                     <br>
