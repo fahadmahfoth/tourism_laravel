@@ -84,4 +84,9 @@
             </div>
         </div>
     </div>
+
+
+    <div class="container">
+        {{ $places->links() }}
+    </div>
 @endsection

@@ -78,4 +78,8 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        {{ $categoreis->links() }}
+    </div>
 @endsection

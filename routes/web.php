@@ -27,6 +27,6 @@ Route::resource('/places', 'Admin\PlaceAdminController');
 Route::resource('/categoreis', 'Admin\PlaceCategoryAdminController'); 
 Route::resource('/suggests', 'Admin\SuggestsAdminController'); 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
