@@ -34,7 +34,7 @@
           <!-- Data -->
           <div class="third-content ml-auto mr-4 mb-2">
             <p class="text-uppercase text-muted">العدد</p>
-            <h4 class="font-weight-bold float-right">2000$</h4>
+          <h4 class="font-weight-bold float-right">{{ $place_count }}</h4>
           </div>
   
           <!-- Content -->
@@ -72,7 +72,7 @@
           <!-- Data -->
           <div class="third-content  ml-auto mr-4 mb-2">
             <p class="text-uppercase text-muted">العدد</p>
-            <h4 class="font-weight-bold float-right">200</h4>
+          <h4 class="font-weight-bold float-right">{{ $categoreis_count }}</h4>
           </div>
   
         
@@ -109,7 +109,7 @@
           <!-- Data -->
           <div class="third-content  ml-auto mr-4 mb-2">
             <p class="text-uppercase text-muted">العدد</p>
-            <h4 class="font-weight-bold float-right">20000</h4>
+          <h4 class="font-weight-bold float-right">{{ $users_count }}</h4>
           </div>
   
           <!-- Content -->
@@ -146,7 +146,7 @@
           <!-- Data -->
           <div class="third-content  ml-auto mr-4 mb-2">
             <p class="text-uppercase text-muted">العدد</p>
-            <h4 class="font-weight-bold float-right">2000</h4>
+            <h4 class="font-weight-bold float-right">{{$suggests_count}}</h4>
           </div>
   
           <!-- Content -->
