@@ -63,6 +63,7 @@
                 <div class="second-content  align-self-center mx-auto text-center">
                     <i class="fas fa-building fa-2x"></i>
                     <i class="fas fa-utensils fa-2x"></i>
+                    <i class="fas fa-mosque fa-2x"></i>
                 </div>
               </div>
             </a>
