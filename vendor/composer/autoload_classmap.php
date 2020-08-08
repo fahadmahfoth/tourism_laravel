@@ -36,6 +36,7 @@ return array(
     'App\\User' => $baseDir . '/app/User.php',
     'App\\place' => $baseDir . '/app/place.php',
     'App\\placeCategory' => $baseDir . '/app/placeCategory.php',
+    'App\\suggest' => $baseDir . '/app/suggest.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',

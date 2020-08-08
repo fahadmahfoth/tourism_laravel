@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::resource('/users', 'Admin\UsersAdminController'); 
 Route::resource('/places', 'Admin\PlaceAdminController'); 
 Route::resource('/categoreis', 'Admin\PlaceCategoryAdminController'); 
+Route::resource('/suggests', 'Admin\SuggestsAdminController'); 
 
 Auth::routes();
 

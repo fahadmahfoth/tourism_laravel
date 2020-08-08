@@ -615,6 +615,7 @@ class ComposerStaticInit2b8200995d29c35e15b198a9c4a99f92
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\place' => __DIR__ . '/../..' . '/app/place.php',
         'App\\placeCategory' => __DIR__ . '/../..' . '/app/placeCategory.php',
+        'App\\suggest' => __DIR__ . '/../..' . '/app/suggest.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/Asm89/Stack/CorsService.php',
