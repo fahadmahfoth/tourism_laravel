@@ -34,9 +34,11 @@ Route::group([
 });
 
 
-Route::middleware('auth:api')->group( function(){
+
     Route::resource('places', 'Api\PlacesApiController') ;
     Route::resource('categoreis', 'Api\CategoreisApiController') ;
-    Route::resource('suggests', 'Api\SuggestsApiController') ;
+    Route::middleware('auth:api')->resource('suggests','Api\SuggestsApiController') ;
     
-    });
+  
+
+  
