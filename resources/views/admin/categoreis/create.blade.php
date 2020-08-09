@@ -7,31 +7,44 @@
             <div class="card">
                 <div dir="rtl" style="text-align: right" class="card-header">اضافة نوع</div>
 
-
-            {{--  for display the masseege error --}}
-
-                {{-- @if(count($errors)>0)
-
-                <ul class="navbar-nav mr-auto">
-
-                @foreach( $errors->all() as $error )
-                    <li class="nav-item active">
-                    <h5>{{ $error }}</h5> 
-                    </li>
-                    
-                    @endforeach
-
-                </ul>
-                <br>
-                @endif --}}
-
-
+                @if(Session::has('success'))
+                <div dir="rtl" style="text-align: right" class="container">      
+                    <div class="alert alert-success"><em> {!! session('success') !!}</em>
+                    </div>
+                </div>
+                @endif
+                
+                                @if(count($errors)>0)
+                
+                
+                                <div dir="rtl" style="text-align: right" class="container">      
+                                    <div class="alert alert-danger">
+                
+                                        <ul style="right: 0" class="navbar-nav">
+                
+                                            @foreach( $errors->all() as $error )
+                                                <li class="nav-item active">
+                                                <p>{{ $error }}</p> 
+                                                </li>
+                                                
+                                                @endforeach
+                            
+                                            </ul>
+                                            
+                                    </div>
+                                </div>
+                
+                                
+                                
+                               
+                                @endif
+                
 
                 
 
                 <div dir="rtl" style="text-align: right" class="card-body">
 
-                    <form action="/store/category" method="post" enctype="multipart/form-data">
+                    <form action="/categoreis" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('POST')
 

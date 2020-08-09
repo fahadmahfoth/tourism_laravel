@@ -22,13 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 //for place
-Route::post('/store/place', 'Admin\PlaceAdminController@store');
-Route::get('/edit/place/{id}', 'Admin\PlaceAdminController@edit');
-Route::put('/update/place/{id}', 'Admin\PlaceAdminController@update');
-//for category
-Route::post('/store/category', 'Admin\PlaceCategoryAdminController@store');
-Route::get('/edit/category/{id}', 'Admin\PlaceCategoryAdminController@edit');
-Route::put('/update/category/{id}', 'Admin\PlaceCategoryAdminController@update');
+// Route::post('/store/place', 'Admin\PlaceAdminController@store');
+// Route::get('/edit/place/{id}', 'Admin\PlaceAdminController@edit');
+// Route::put('/update/place/{id}', 'Admin\PlaceAdminController@update');
+// //for category
+// Route::post('/store/category', 'Admin\PlaceCategoryAdminController@store');
+// Route::get('/edit/category/{id}', 'Admin\PlaceCategoryAdminController@edit');
+// Route::put('/update/category/{id}', 'Admin\PlaceCategoryAdminController@update');
 
 Route::resource('/users', 'Admin\UsersAdminController'); 
 Route::resource('/places', 'Admin\PlaceAdminController'); 

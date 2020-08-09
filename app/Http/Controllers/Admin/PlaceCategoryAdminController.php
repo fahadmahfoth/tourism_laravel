@@ -87,7 +87,7 @@ class PlaceCategoryAdminController extends Controller
                ]);
 
 
-            return redirect()->back();
+            return redirect()->back()->with('success','تمت الاضافة بنجاح');
     }
 
     /**
@@ -175,7 +175,7 @@ $this->validate($request,[
 
     $placeCategory->name = $request->name;
     $placeCategory->save();
-    return redirect()->back();
+    return redirect('/categoreis')->with('success','تم التعديل بنجاح');
     //->route('category.index');
 
     }
@@ -191,6 +191,6 @@ $this->validate($request,[
 
         $placeCategory=placeCategory::find($id);
         $placeCategory->delete($id);
-        return redirect()->back();
+        return redirect('/categoreis')->with('success','تم الحذف بنجاح');
     }
 }

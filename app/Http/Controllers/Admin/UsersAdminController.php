@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Role;
 
 use App\User;
 use App\Http\Requests\UserRequest;
@@ -9,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 
 class UsersAdminController extends Controller
@@ -21,6 +21,10 @@ class UsersAdminController extends Controller
 {
     $this->middleware(['role:super-admin']);
 }
+
+
+         
+          
 
 
 

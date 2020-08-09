@@ -44,7 +44,7 @@
 
                 <div dir="rtl" style="text-align: right" class="card-body">
 
-                    <form action="/store/place" method="post" enctype="multipart/form-data">
+                    <form action="/places" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('POST')
 

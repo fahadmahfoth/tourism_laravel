@@ -67,6 +67,20 @@
           <li class="nav-item">
             <a class="nav-link" href="/users">المستخدمين</a>
           </li>
+
+          <li class="nav-item">
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+
+                @csrf
+
+                <button class="btn btn-danger" name="submit" type="submit"> تسجيل خروج</button>
+            </form>
+            {{-- <i class="far fa-circle nav-icon"></i>
+            --}}
+
+            </a>
+        </li>
   
        
   

@@ -4,6 +4,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
+
+                @if(Session::has('success'))
+                <div dir="rtl" style="text-align: right" class="container">      
+                    <div class="alert alert-success"><em> {!! session('success') !!}</em>
+                    </div>
+                </div>
+                @endif
+                
+                
                 <div dir="rtl" style="text-align: right;"  class="col">
                     <h1 dir="rtl">الانواع</h1>
                     <a href="/categoreis/create" class="btn btn-success">جديد</a>

@@ -8,7 +8,12 @@
                    <div class="row-sm">
                     <h1 dir="rtl">{{$place->name}}</h1>
                    <a href="/places/{{$place->id}}/edit" class="btn btn-primary">تعديل</a>
-                   <a href="/places/{{$place->id}}/destroy" class="btn btn-danger">حذف</a>
+                   {!! Form::open(['action' => ['Admin\PlaceAdminController@destroy', $place->id], 'method' =>
+                   'POST']) !!}
+                   {{ Form::hidden('_method', 'DELETE') }}
+                   {{ Form::submit('حذف', ['class' => 'btn btn-danger']) }}
+                   {!! Form::close() !!}
+                   
                    </div>
                     
                     <br>
@@ -17,11 +22,20 @@
                         {{ $place->contente }}
                     </p>
                     <br>
+                    <div>
+                        <h4>
+                            ايام العمل
+                        </h4>
+                        <p>
+
+                            {{ $place->days }}
+                        </p>
+
+                    </div>
+                   
                     <p>
-                        {{ $place->days }}
-                    </p>
-                    <p>
-                       Image {{ $place->image }}
+                        <img src="{{ $place->image }}"  height="300px" alt="">
+                       
                     </p>
 
 
@@ -59,7 +73,7 @@
     
                                         </td>
                                         <td>
-                                            {{ $place->dwon  }}
+                                            {{ $place->time_down  }}
     
                                         </td>
                                         <td>

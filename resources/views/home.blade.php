@@ -83,9 +83,22 @@
     </div>
     <!--Grid column-->
   
+
+
+    @if (Auth::guest())
+
+                        @else
+
+                            @foreach (auth()
+        ->user()
+        ->getRoleNames()
+    as $item)
+                                @if ($item == 'super-admin')
     <!--Grid column-->
     <div class="col-md-6 mb-4">
   
+
+      
       <!-- Card -->
       <div class="card gradient-card">
   
@@ -117,9 +130,27 @@
         
       </div>
       <!-- Card -->
+
+
+
+
+
+
+
   
     </div>
     <!--Grid column-->
+
+
+    @endif
+
+    @endforeach
+
+
+@endif
+
+
+
   
     <!--Grid column-->
     <div class="col-md-6 mb-4">

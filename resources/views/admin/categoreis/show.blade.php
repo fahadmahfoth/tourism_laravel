@@ -7,6 +7,13 @@
                 <div dir="rtl" style="text-align: right;"  class="col">
                     <h1 dir="rtl">{{$category->name}}</h1>
 
+                    <a href="/categoreis/{{$category->id}}/edit" class="btn btn-primary">تعديل</a>
+                    {!! Form::open(['action' => ['Admin\PlaceCategoryAdminController@destroy', $category->id], 'method' =>
+                    'POST']) !!}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('حذف', ['class' => 'btn btn-danger']) }}
+                    {!! Form::close() !!}
+
                     <br>
 
                     <div dir="rtl" style="text-align: right" class="table-responsive">

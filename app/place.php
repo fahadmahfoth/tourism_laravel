@@ -5,6 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class place extends Model
 {
+
+
+    public function getImageAttribute($image){
+        return asset($image);
+        }
     
 
     protected $fillable = [

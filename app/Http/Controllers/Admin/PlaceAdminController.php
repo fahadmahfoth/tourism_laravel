@@ -214,7 +214,7 @@ return redirect()->back()->with('success','تمت الاضافة بنجاح');
             $place->map_lat = $request->map_lat;
             $place->map_lng = $request->map_lng;
             $place->save();
-            return redirect()->back();
+            return redirect('/places')->with('success','تم التعديل بنجاح');
             //->route('category.index');
     }
 
@@ -228,6 +228,6 @@ return redirect()->back()->with('success','تمت الاضافة بنجاح');
     {
         $place=place::find($id);
         $place->delete($id);
-        return redirect()->back();   
+        return redirect('/places')->with('success','تم الحذف بنجاح');   
      }
 }

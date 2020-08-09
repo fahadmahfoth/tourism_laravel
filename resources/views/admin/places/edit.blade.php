@@ -8,26 +8,35 @@
                 <div dir="rtl" style="text-align: right" class="card-header">اضافة مكان</div>
 
                  {{--  for display the masseege error --}}
+                 @if(count($errors)>0)
 
-                {{-- @if(count($errors)>0)
 
-                <ul class="navbar-nav mr-auto">
-
-                @foreach( $errors->all() as $error )
-                    <li class="nav-item active">
-                    <h5>{{ $error }}</h5> 
-                    </li>
-                    
-                    @endforeach
-
-                </ul>
-                <br>
-                @endif --}}
+                 <div dir="rtl" style="text-align: right" class="container">      
+                     <div class="alert alert-danger">
+ 
+                         <ul style="right: 0" class="navbar-nav">
+ 
+                             @foreach( $errors->all() as $error )
+                                 <li class="nav-item active">
+                                 <p>{{ $error }}</p> 
+                                 </li>
+                                 
+                                 @endforeach
+             
+                             </ul>
+                             
+                     </div>
+                 </div>
+ 
+                 
+                 
+                
+                 @endif
 
 
                 <div dir="rtl" style="text-align: right" class="card-body">
 
-                    <form action="/update/place/{{$place->id}}" method="post" enctype="multipart/form-data">
+                    <form action="/places/{{$place->id}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
