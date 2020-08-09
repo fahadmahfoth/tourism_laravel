@@ -9,20 +9,37 @@
 
                    {{--  for display the masseege error --}}
 
-                {{-- @if(count($errors)>0)
+                   @if(Session::has('success'))
+<div dir="rtl" style="text-align: right" class="container">      
+    <div class="alert alert-success"><em> {!! session('success') !!}</em>
+    </div>
+</div>
+@endif
 
-                <ul class="navbar-nav mr-auto">
+                @if(count($errors)>0)
 
-                @foreach( $errors->all() as $error )
-                    <li class="nav-item active">
-                    <h5>{{ $error }}</h5> 
-                    </li>
-                    
-                    @endforeach
 
-                </ul>
-                <br>
-                @endif --}}
+                <div dir="rtl" style="text-align: right" class="container">      
+                    <div class="alert alert-danger">
+
+                        <ul style="right: 0" class="navbar-nav">
+
+                            @foreach( $errors->all() as $error )
+                                <li class="nav-item active">
+                                <p>{{ $error }}</p> 
+                                </li>
+                                
+                                @endforeach
+            
+                            </ul>
+                            
+                    </div>
+                </div>
+
+                
+                
+               
+                @endif
 
 
                 <div dir="rtl" style="text-align: right" class="card-body">

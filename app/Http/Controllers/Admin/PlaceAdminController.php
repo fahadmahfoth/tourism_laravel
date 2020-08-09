@@ -8,11 +8,20 @@ use App\place;
 use App\placeCategory ;
 class PlaceAdminController extends Controller
 {
+
+
+
+    public function __construct()
+    {
+        $this->middleware(['role:admin']);
+    }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         return view('admin.places.index')->with(
@@ -103,7 +112,7 @@ $place=place::create([
 
 ]);
 
-return redirect()->back();
+return redirect()->back()->with('success','تمت الاضافة بنجاح');
             
     }
 
@@ -219,5 +228,6 @@ return redirect()->back();
     {
         $place=place::find($id);
         $place->delete($id);
-        return redirect()->back();    }
+        return redirect()->back();   
+     }
 }

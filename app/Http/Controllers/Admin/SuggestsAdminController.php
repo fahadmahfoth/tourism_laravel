@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\suggest ;
 class SuggestsAdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['role:admin']);
+    }
     /**
      * Create a new controller instance.
      *

@@ -7,9 +7,18 @@ use App\place ;
 use App\User ;
 use App\suggest ;
 use App\placeCategory ;
+// use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware(['role:admin']);
+    }
+
+    
     /**
      * Create a new controller instance.
      *
@@ -27,6 +36,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        //   $role3 = Role::create(['name' => 'super-admin']);
+        //   $role1 = Role::create(['name' => 'admin']);
 
         $places_count = place::all()->count();
         $categoreis_count = placeCategory::all()->count();
