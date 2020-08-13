@@ -43,7 +43,7 @@
 
                 <div dir="rtl" style="text-align: right" class="card-body">
 
-                    <form action="/update/category/{{$category->id}}" method="post" enctype="multipart/form-data">
+                    <form action="/categoreis/{{$category->id}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
